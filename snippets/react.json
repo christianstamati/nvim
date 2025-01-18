@@ -1,0 +1,144 @@
+{
+  "React Functional Component": {
+    "prefix": ["rfc", "component"],
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Props} {",
+      "  ${2:// Add props here}",
+      "}",
+      "",
+      "const ${3:ComponentName}: React.FC<${1:Props}> = ({ ${4:props} }) => {",
+      "  return (",
+      "    <div>",
+      "      ${5}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${3:ComponentName};"
+    ],
+    "description": "React Functional Component with TypeScript"
+  },
+  "React useState Hook": {
+    "prefix": ["usestate", "hook"],
+    "body": [
+      "const [${1:state}, set${2:State}] = React.useState<${3:type}>(${4:initialValue});"
+    ],
+    "description": "React useState Hook"
+  },
+  "React useEffect Hook": {
+    "prefix": ["useeffect", "effect"],
+    "body": [
+      "React.useEffect(() => {",
+      "  ${1:// effect logic here}",
+      "  return () => {",
+      "    ${2:// cleanup logic here}",
+      "  };",
+      "}, [${3:dependencies}]);"
+    ],
+    "description": "React useEffect Hook"
+  },
+  "React Context Creation": {
+    "prefix": ["context"],
+    "body": [
+      "const ${1:Context} = React.createContext<${2:type} | undefined>(undefined);",
+      "",
+      "const ${1:Context}Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {",
+      "  const [${3:state}, set${4:State}] = React.useState(${5:initialValue});",
+      "",
+      "  return (",
+      "    <${1:Context}.Provider value={{ ${3:state}, set${4:State} }}>",
+      "      {children}",
+      "    </${1:Context}.Provider>",
+      "  );",
+      "};",
+      "",
+      "export { ${1:Context}, ${1:Context}Provider };"
+    ],
+    "description": "React Context Creation with Provider"
+  },
+  "React useReducer Hook": {
+    "prefix": ["usereducer", "reducer"],
+    "body": [
+      "const ${1:initialState} = {",
+      "  ${2:key}: ${3:value}",
+      "};",
+      "",
+      "const ${4:reducer} = (state: typeof ${1:initialState}, action: { type: string; payload?: any }) => {",
+      "  switch (action.type) {",
+      "    case '${5:ACTION_TYPE}':",
+      "      return { ...state, ${6:updatedKey}: action.payload };",
+      "    default:",
+      "      return state;",
+      "  }",
+      "};",
+      "",
+      "const [state, dispatch] = React.useReducer(${4:reducer}, ${1:initialState});"
+    ],
+    "description": "React useReducer Hook"
+  },
+  "React Custom Hook": {
+    "prefix": ["customhook", "hook"],
+    "body": [
+      "import React from 'react';",
+      "",
+      "const use${1:CustomHook} = (${2:initialValue}: ${3:type}) => {",
+      "  const [${4:state}, set${5:State}] = React.useState(${2:initialValue});",
+      "",
+      "  const ${6:handler} = () => {",
+      "    ${7:// logic here}",
+      "  };",
+      "",
+      "  return { ${4:state}, ${6:handler} };",
+      "};",
+      "",
+      "export default use${1:CustomHook};"
+    ],
+    "description": "React Custom Hook Template"
+  },
+  "React Memoized Component": {
+    "prefix": ["memo", "reactmemo"],
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Props} {",
+      "  ${2:// Add props here}",
+      "}",
+      "",
+      "const ${3:ComponentName}: React.FC<${1:Props}> = React.memo(({ ${4:props} }) => {",
+      "  return (",
+      "    <div>",
+      "      ${5}",
+      "    </div>",
+      "  );",
+      "});",
+      "",
+      "export default ${3:ComponentName};"
+    ],
+    "description": "React Memoized Functional Component"
+  },
+  "React Forwarded Ref": {
+    "prefix": ["forwardref"],
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Props} {",
+      "  ${2:// Add props here}",
+      "}",
+      "",
+      "const ${3:ComponentName} = React.forwardRef<${4:HTMLDivElement}, ${1:Props}>((props, ref) => {",
+      "  return (",
+      "    <div ref={ref}>",
+      "      ${5}",
+      "    </div>",
+      "  );",
+      "});",
+      "",
+      "${3:ComponentName}.displayName = '${3:ComponentName}';",
+      "",
+      "export default ${3:ComponentName};"
+    ],
+    "description": "React Forwarded Ref Component"
+  }
+}
