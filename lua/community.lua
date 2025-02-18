@@ -5,7 +5,9 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
   { import = "astrocommunity.pack.lua" },
+
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.tailwindcss" },
 
@@ -20,4 +22,13 @@ return {
 
   -- support for todo
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
+
+  -- custom theme
+  { import = "astrocommunity.colorscheme.rose-pine" },
+
+  -- handle quotes
+  { import = "astrocommunity.motion.nvim-surround" },
+
+  -- smooth movement
+  { import = "astrocommunity.scrolling.mini-animate" },
 }

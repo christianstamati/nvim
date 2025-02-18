@@ -20,6 +20,8 @@ return {
           ["<Leader>ta"] = { "<cmd>ToggleTermToggleAll<cr>", desc = "Toggle all terminals" },
 
           ["t"] = { "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", desc = "Toggle terminal with count" },
+
+          ["<Leader>fp"] = { "<cmd>:Telescope project<cr>", desc = "Find projects" },
         },
 
         t = {
