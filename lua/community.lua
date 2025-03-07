@@ -24,7 +24,7 @@ return {
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
 
   -- custom theme
-  { import = "astrocommunity.colorscheme.rose-pine" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
 
   -- handle quotes
   { import = "astrocommunity.motion.nvim-surround" },
